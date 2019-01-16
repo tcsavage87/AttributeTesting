@@ -9,13 +9,12 @@ div {
 	margin: 1em;
 }
 
-h1, p, ul {
-	padding: 1em;
+.shrink {
+	transform: scale(0.9);
 }
 
-.container {
-	margin: 0 auto;
-	width: 30%;
+h1, p, ul {
+	padding: 1em;
 }
 
 ul {
