@@ -1,5 +1,8 @@
+// Pull headline and paragraph
 const headline = document.querySelector('h1.grow');
 const p = document.querySelector('p[data-value="text"]');
+
+// Pull list items
 
 const blueLi = document.querySelector('li:nth-of-type(1n)')
 const redLi = document.querySelector('li[name=red]');
@@ -18,12 +21,19 @@ const colorsArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
 		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
 
-const table = document.querySelector('table');
+// Pull table, rows and data
 
+const table = document.querySelector('table');
+const translate = document.querySelector('tr#firstRow > td:nth-child(1)');
+const underline = document.querySelectorAll('tr#firstRow > td:nth-child(2n)');
+const increaseSize = document.querySelector('td:nth-of-type(3n)');
 const unmerge = document.querySelector('[colspan]');
 const expander = document.querySelector('tr#expander');
+
 let newRowButton;
 let flag = true;
+
+// Functions
 
 function shrink() {
 	if (this.classList.contains('shrink')) {
@@ -78,15 +88,28 @@ function addNewRow() {
 	newCellCount++;
 }
 
+// Event Listeners for interactivity
+
 headline.addEventListener('click', shrink);
 
 p.addEventListener('click', rotate);
 
 blueLi.addEventListener('click', () => blueLi.style.color = 'blue');
+
 redLi.addEventListener('click', () => redLi.style.color = 'red');
+
 greenLi.addEventListener('click', () => greenLi.style.color = 'green');
 
 liArray.forEach(item => item.addEventListener('click', randomizeColor));
 
+underline.forEach(cell => cell.addEventListener('click', () => cell.style.textDecoration = 'underline'));
+
+increaseSize.addEventListener('click', () => increaseSize.style.fontSize = '125%');
+
 unmerge.addEventListener('click', splitCellMerge);
+
+translate.addEventListener('click', () => {
+	const textAlignValues = ['left', 'center', 'right'];
+	translate.style.textAlign = `${textAlignValues[Math.floor(Math.random() * textAlignValues.length)]}`;
+});
 

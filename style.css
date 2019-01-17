@@ -18,6 +18,10 @@ div {
 	transform: scale(0.75);
 }
 
+h1, p, li, td {
+	cursor: pointer;
+}
+
 h1, p, ul {
 	padding: 1em;
 }
