@@ -9,12 +9,22 @@ div {
 	margin: 1em;
 }
 
+.grow {
+	transform: scale(1);
+	transition: 2s ease-out;
+}
+
 .shrink {
-	transform: scale(0.9);
+	transform: scale(0.75);
 }
 
 h1, p, ul {
 	padding: 1em;
+}
+
+.rotate {
+	transform: rotate(360deg);
+	transition: 1s;
 }
 
 ul {
@@ -24,6 +34,7 @@ ul {
 li {
 	padding-bottom: 1em;
 	font-weight: 600;
+	cursor: pointer;
 }
 
 table {
